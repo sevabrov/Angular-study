@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarsComponent {
 
+  isShown = false;
+  cars = ['Ford', 'Toyota', 'Opel']
+  newCar = '';
+
+  showCars() {
+    this.isShown = !this.isShown;
+  }
+
+  addCar() {
+    this.cars.push(this.newCar)
+    this.newCar = ''
+  }
+
   constructor() {
 
   }
