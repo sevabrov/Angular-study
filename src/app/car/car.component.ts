@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-car',
@@ -7,21 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent {
 
-  car: string = 'Ford';
-  showText:string = '';
-  show = false;
-
-  inputText = '';
-
-  canShow(value: string) {
-    this.show = true;
-    this.showText = value;
-  }
-
-  getText(event: Event) {
-    this.inputText = (<HTMLInputElement>event.target).value
-  }
-
-  constructor() {}
+  @Input('carItem') car: string;
 
 }

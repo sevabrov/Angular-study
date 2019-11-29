@@ -1,3 +1,5 @@
+<app-add-car (onAddCar)="updareCarList($event)"></app-add-car>
+<hr>
 <button 
     [ngStyle]="{color: !isShown ? 'red' : 'blue'}"
     class="btn"
@@ -7,7 +9,5 @@
 </button>
 <hr>
 <div *ngIf="isShown">
-    <button class="btn btn-primary" (click)="addCar()">Add car</button>
-    <input class="form-control" type="text" [(ngModel)]="newCar">
-    <app-car *ngFor="let car of cars"></app-car>
+    <app-car *ngFor="let car of cars" [carItem]="car"></app-car>
 </div>

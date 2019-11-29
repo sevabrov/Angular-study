@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cars',
@@ -9,19 +9,13 @@ export class CarsComponent {
 
   isShown = false;
   cars = ['Ford', 'Toyota', 'Opel']
-  newCar = '';
 
   showCars() {
     this.isShown = !this.isShown;
   }
 
-  addCar() {
-    this.cars.push(this.newCar)
-    this.newCar = ''
-  }
-
-  constructor() {
-
+  updareCarList(car:string) {
+    this.cars.push(car)
   }
   
 }
