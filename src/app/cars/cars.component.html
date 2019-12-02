@@ -8,6 +8,12 @@
     {{!isShown ? 'Show' : 'Hide'}}
 </button>
 <hr>
+<button class="btn btn-success"
+    (click)="changeCarName()">
+    Change Name 
+</button>
+<hr>
 <div *ngIf="isShown">
-    <app-car *ngFor="let car of cars" [carItem]="car"></app-car>
+    <app-car *ngFor="let car of cars" [carItem]="car" [name]="car.name"></app-car>
+    <hr>
 </div>

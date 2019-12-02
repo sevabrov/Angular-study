@@ -7,13 +7,19 @@ import { Component, EventEmitter, Output  } from '@angular/core';
 })
 export class AddCarComponent {
   
-  newCar = '';
+  newCar = {
+    name: '',
+    year: 2015
+  };
   
-  @Output() onAddCar = new EventEmitter<string>();
+  @Output() onAddCar = new EventEmitter<{name: string, year: number}>();
 
   addCar() {
     this.onAddCar.emit(this.newCar);
-    this.newCar ='';
+    this.newCar ={
+      name: '',
+      year: 2015
+    };;
   }
 
 }
